@@ -15,7 +15,7 @@ import urllib.request
 
 API_URL = "https://api.anthropic.com/v1/messages/count_tokens"
 ANTHROPIC_VERSION = "2023-06-01"
-MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5-20250929")
+MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 
 
 def count_tokens(api_key: str, text: str) -> int:
