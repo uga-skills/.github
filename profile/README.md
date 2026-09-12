@@ -16,7 +16,7 @@
 
 ### スキルサイズの目安
 
-Claude Code の skill-creator が示す目安に沿って、SKILL.md 本文は簡潔に保ち、詳細は必要時にだけ読み込む参照ファイルへ逃がす方針とします。
+Claude Code の [skill-creator](https://github.com/anthropics/skills) が示す目安に沿って、SKILL.md 本文は簡潔に保ち、詳細は必要時にだけ読み込む参照ファイルへ逃がす方針とします。
 
 - **metadata（name + description）**：常にコンテキストに載るため約100語が目安
 - **SKILL.md 本文**：スキル発火時のみコンテキストに載るため500行未満が目安。近づく場合は参照ファイルへ分割する
