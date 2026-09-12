@@ -12,7 +12,7 @@
 | [git-merge](https://github.com/uga-skills/git-merge) | 指定したブランチを現在のブランチ（または指定した別ブランチ）に merge する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-559-blue) |
 | [git-resolve-conflicts](https://github.com/uga-skills/git-resolve-conflicts) | rebase/merge で発生したコンフリクトをファイル種別ごとの方針で解決する。git-rebase / git-merge から呼ばれるほか、単体でも、GitHub PR URL を渡しても起動できる | ![tokens](https://img.shields.io/badge/tokens-1486-blue) |
 
-トークン概算値は SKILL.md を `cl100k_base` エンコーディングで計測したものです（`git-commit` のみ Anthropic Messages API の `count_tokens` による実測値、それ以外は [bin/calc-token.py](../bin/calc-token.py) による概算）。SKILL.md 本文（手順・ルール等）は日本語より少ないトークンで済む英語で記述し、`description` のみユーザーの発話（日本語）に合わせて日本語のままにしています。
+トークン数は Anthropic Messages API の `count_tokens` エンドポイントによる実測値です（[bin/calc-token.py](../bin/calc-token.py) で計測。要 `ANTHROPIC_API_KEY`）。SKILL.md 本文（手順・ルール等）は日本語より少ないトークンで済む英語で記述し、`description` のみユーザーの発話（日本語）に合わせて日本語のままにしています。
 
 ## 一括インストール
 
@@ -61,8 +61,9 @@ ln -s ~/.agent/skills/git-resolve-conflicts ~/.claude/skills/git-resolve-conflic
 
 Claude Code スキルではなく、単体で実行するユーティリティスクリプトです。
 
-- [bin/calc-token.py](../bin/calc-token.py) — 指定したファイルのトークン数を `cl100k_base` で概算します。
+- [bin/calc-token.py](../bin/calc-token.py) — 指定したファイルのトークン数を Anthropic Messages API の `count_tokens` で実測します。`ANTHROPIC_API_KEY` が未設定の場合はエラーになります（[.env_template](../.env_template) 参照）。
 
   ```bash
+  export ANTHROPIC_API_KEY=sk-ant-...
   python3 bin/calc-token.py path/to/SKILL.md
   ```
