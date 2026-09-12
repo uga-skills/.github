@@ -4,15 +4,15 @@
 
 ## スキル一覧
 
-| スキル | 説明 | トークン数 |
-| --- | --- | --- |
-| [git-commit](https://github.com/uga-skills/git-commit) | ステージング済みの変更（git diff --cached）を解析してコミットを実行する。失敗した場合はそのまま実行できるコミットコマンドを提案する | ![tokens](https://img.shields.io/badge/tokens-486-blue) |
-| [git-rebase](https://github.com/uga-skills/git-rebase) | 現在のブランチを指定したブランチの上に rebase する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-605-blue) |
-| [git-merge](https://github.com/uga-skills/git-merge) | 指定したブランチを現在のブランチ（または指定した別ブランチ）に merge する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-619-blue) |
-| [git-resolve-conflicts](https://github.com/uga-skills/git-resolve-conflicts) | rebase/merge で発生したコンフリクトをファイル種別ごとの方針で解決する。git-rebase / git-merge から呼ばれるほか、単体でも、GitHub PR URL を渡しても起動できる | ![tokens](https://img.shields.io/badge/tokens-1608-blue) |
-| [review-markup](https://github.com/uga-skills/review-markup) | HTML のセマンティクスとアクセシビリティを、WHATWG HTML Living Standard・WAI-ARIA・ARIA in HTML・APG Patterns に照らしてレビューする | ![tokens](https://img.shields.io/badge/tokens-8035-lightgrey) |
+| スキル | 説明 |
+| --- | --- |
+| [git-commit](https://github.com/uga-skills/git-commit) | ステージング済みの変更（git diff --cached）を解析してコミットを実行する。失敗した場合はそのまま実行できるコミットコマンドを提案する |
+| [git-rebase](https://github.com/uga-skills/git-rebase) | 現在のブランチを指定したブランチの上に rebase する。競合時は git-resolve-conflicts に委譲する |
+| [git-merge](https://github.com/uga-skills/git-merge) | 指定したブランチを現在のブランチ（または指定した別ブランチ）に merge する。競合時は git-resolve-conflicts に委譲する |
+| [git-resolve-conflicts](https://github.com/uga-skills/git-resolve-conflicts) | rebase/merge で発生したコンフリクトをファイル種別ごとの方針で解決する。git-rebase / git-merge から呼ばれるほか、単体でも、GitHub PR URL を渡しても起動できる |
+| [review-markup](https://github.com/uga-skills/review-markup) | HTML のセマンティクスとアクセシビリティを、WHATWG HTML Living Standard・WAI-ARIA・ARIA in HTML・APG Patterns に照らしてレビューする |
 
-トークン数は Anthropic Messages API の `count_tokens` エンドポイントによる実測値です（[bin/calc-token.py](../bin/calc-token.py) で計測。要 `ANTHROPIC_API_KEY`）。`review-markup` のみ未英語化のため旧 `tiktoken`（cl100k_base）による概算値のまま（グレーバッジで区別）。SKILL.md 本文（手順・ルール等）は日本語より少ないトークンで済む英語で記述し、`description` のみユーザーの発話（日本語）に合わせて日本語のままにしています。
+各スキルのトークン使用量は、それぞれのリポジトリの README.md frontmatter に記載しています（SKILL.md 本文は日本語より少ないトークンで済む英語で記述し、`description` のみユーザーの発話（日本語）に合わせて日本語のままにしています）。
 
 ## 一括インストール
 
