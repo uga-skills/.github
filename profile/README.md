@@ -8,11 +8,11 @@
 | --- | --- | --- |
 | [git-commit](https://github.com/uga-skills/git-commit) | ステージング済みの変更（git diff --cached）を解析してコミットを実行する。失敗した場合はそのまま実行できるコミットコマンドを提案する | ![tokens](https://img.shields.io/badge/tokens-529-blue) |
 | [review-markup](https://github.com/uga-skills/review-markup) | HTML のセマンティクスとアクセシビリティを、WHATWG HTML Living Standard・WAI-ARIA・ARIA in HTML・APG Patterns に照らしてレビューする | ![tokens](https://img.shields.io/badge/tokens-8035-blue) |
-| [git-rebase](https://github.com/uga-skills/git-rebase) | 現在のブランチを指定したブランチの上に rebase する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-943-blue) |
-| [git-merge](https://github.com/uga-skills/git-merge) | 指定したブランチを現在のブランチ（または指定した別ブランチ）に merge する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-941-blue) |
-| [git-resolve-conflicts](https://github.com/uga-skills/git-resolve-conflicts) | rebase/merge で発生したコンフリクトをファイル種別ごとの方針で解決する。git-rebase / git-merge から呼ばれるほか、単体でも、GitHub PR URL を渡しても起動できる | ![tokens](https://img.shields.io/badge/tokens-2516-blue) |
+| [git-rebase](https://github.com/uga-skills/git-rebase) | 現在のブランチを指定したブランチの上に rebase する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-543-blue) |
+| [git-merge](https://github.com/uga-skills/git-merge) | 指定したブランチを現在のブランチ（または指定した別ブランチ）に merge する。競合時は git-resolve-conflicts に委譲する | ![tokens](https://img.shields.io/badge/tokens-559-blue) |
+| [git-resolve-conflicts](https://github.com/uga-skills/git-resolve-conflicts) | rebase/merge で発生したコンフリクトをファイル種別ごとの方針で解決する。git-rebase / git-merge から呼ばれるほか、単体でも、GitHub PR URL を渡しても起動できる | ![tokens](https://img.shields.io/badge/tokens-1486-blue) |
 
-トークン概算値は SKILL.md を `cl100k_base` エンコーディングで計測したものです（`git-commit` のみ Anthropic Messages API の `count_tokens` による実測値、それ以外は [bin/calc-token.py](../bin/calc-token.py) による概算）。
+トークン概算値は SKILL.md を `cl100k_base` エンコーディングで計測したものです（`git-commit` のみ Anthropic Messages API の `count_tokens` による実測値、それ以外は [bin/calc-token.py](../bin/calc-token.py) による概算）。SKILL.md 本文（手順・ルール等）は日本語より少ないトークンで済む英語で記述し、`description` のみユーザーの発話（日本語）に合わせて日本語のままにしています。
 
 ## 一括インストール
 
