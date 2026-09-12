@@ -22,16 +22,6 @@ Claude Code の [skill-creator](https://github.com/anthropics/skills) が示す�
 - **SKILL.md 本文**：スキル発火時のみコンテキストに載るため500行未満が目安。近づく場合は参照ファイルへ分割する
 - **参照ファイル（>300行）**：目次を付ける
 
-現状の各スキルの行数・トークン数（claude-sonnet-5実測）は以下の通りです。
-
-| スキル | 行数 | トークン数 |
-| --- | --- | --- |
-| git-commit | 40 | 617 |
-| git-rebase | 41 | 763 |
-| git-merge | 41 | 768 |
-| git-resolve-conflicts | 79 | 2123 |
-| review-markup | 404 | 8304 |
-
 ## 一括インストール
 
 すべてのプロジェクトで使えるよう、ホームディレクトリにインストールする例です。
