@@ -11,13 +11,14 @@ description: uga-skills組織の既存Claude Codeスキル（git-commit, git-reb
 
 ### 1. skill-creator の準備
 
-`.github` リポジトリ直下の `skills/` に本家 `anthropics/skills` をクローン済みか確認し、なければクローン、あれば最新化する（`create-skill` の手順1と同じ）。
+`.github` リポジトリ直下の `sources/skills/` に本家 `anthropics/skills` をクローン済みか確認し、なければクローン、あれば最新化する（`create-skill` の手順1と同じ）。
 
 ```bash
-if [ -d skills/.git ]; then
-  git -C skills pull --ff-only
+mkdir -p sources
+if [ -d sources/skills/.git ]; then
+  git -C sources/skills pull --ff-only
 else
-  git clone git@github.com:anthropics/skills.git skills
+  git clone git@github.com:anthropics/skills.git sources/skills
 fi
 ```
 
@@ -32,10 +33,10 @@ fi
 
 ### 3. 改善方針の検討
 
-`skills/skills/skill-creator/SKILL.md` の「Improving the skill」節（How to think about improvements / The iteration loop）に従う。
+`sources/skills/skills/skill-creator/SKILL.md` の「Improving the skill」節（How to think about improvements / The iteration loop）に従う。
 
 - ユーザーからの具体的な要望（バグ・不足している分岐・トリガー精度など）を起点に、SKILL.md本文を修正する。
-- descriptionを変更する場合は「Description Optimization」節の考え方（発火条件を明示的かつやや押し出し気味に書く）を踏まえる。
+- descriptionを変更する場合は `sources/skills/skills/skill-creator/SKILL.md` の「Description Optimization」節の考え方（発火条件を明示的かつやや押し出し気味に書く）を踏まえる。
 - デフォルトでは評価ループ（テストケース・サブエージェント比較・ベンチマーク）は実施しない。ユーザーに「旧版と比較するベンチマークも取りますか？」と確認し、希望があれば同ファイルの「Running and evaluating test cases」以降に従い、`/tmp/<name>-before` を baseline として使う。成果物はコミットしない。
 
 ### 4. トークン数の再計測

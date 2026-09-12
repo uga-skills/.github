@@ -11,22 +11,23 @@ description: uga-skills組織に新しいClaude Codeスキルを追加する。�
 
 ### 1. skill-creator の準備
 
-このリポジトリ（`.github`）直下の `skills/` ディレクトリに、本家 `anthropics/skills` をクローンする（`.gitignore` 対象）。
+このリポジトリ（`.github`）直下の `sources/skills/` ディレクトリに、本家 `anthropics/skills` をクローンする（`.gitignore` 対象）。
 
 ```bash
-if [ -d skills/.git ]; then
-  git -C skills pull --ff-only
+mkdir -p sources
+if [ -d sources/skills/.git ]; then
+  git -C sources/skills pull --ff-only
 else
-  git clone git@github.com:anthropics/skills.git skills
+  git clone git@github.com:anthropics/skills.git sources/skills
 fi
 ```
 
 ### 2. スキル設計（軽量フロー）
 
-`skills/skills/skill-creator/SKILL.md` の「Creating a skill」節（Capture Intent / Interview and Research / Write the SKILL.md / Skill Writing Guide）に従い、ユーザーと対話してスキルを設計する。
+`sources/skills/skills/skill-creator/SKILL.md` の「Creating a skill」節（Capture Intent / Interview and Research / Write the SKILL.md / Skill Writing Guide）に従い、ユーザーと対話してスキルを設計する。
 
 - デフォルトでは同ファイルの「Running and evaluating test cases」以降（テストケース作成・サブエージェント並列評価・ベンチマーク）は**実施しない**。テストケース数に比例してサブエージェントのトークン消費が増えるため、単純なスキルでは費用対効果が低い。
-- ユーザーに「テスト評価・ベンチマークも実施しますか？」と確認し、希望があれば `skills/skills/skill-creator/SKILL.md` の当該節にそのまま従う（`eval-viewer/generate_review.py` を使う、等）。この場合の成果物（テストケース・ベンチマーク結果）はどのリポジトリにもコミットしない。
+- ユーザーに「テスト評価・ベンチマークも実施しますか？」と確認し、希望があれば `sources/skills/skills/skill-creator/SKILL.md` の当該節にそのまま従う（`eval-viewer/generate_review.py` を使う、等）。この場合の成果物（テストケース・ベンチマーク結果）はどのリポジトリにもコミットしない。
 - 500行目安・progressive disclosure（scripts/references/assets への分離）は必ず踏襲する。
 
 ### 3. ローカルにスキル一式を作成
