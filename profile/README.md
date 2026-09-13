@@ -11,6 +11,7 @@
 | [git-merge](https://github.com/uga-skills/git-merge) | 指定したブランチを現在のブランチ（または指定した別ブランチ）に merge する。競合時は git-resolve-conflicts に委譲する |
 | [git-resolve-conflicts](https://github.com/uga-skills/git-resolve-conflicts) | rebase/merge で発生したコンフリクトをファイル種別ごとの方針で解決する。git-rebase / git-merge から呼ばれるほか、単体でも、GitHub PR URL を渡しても起動できる |
 | [review-markup](https://github.com/uga-skills/review-markup) | HTML のセマンティクスとアクセシビリティを、WHATWG HTML Living Standard・WAI-ARIA・ARIA in HTML・APG Patterns に照らしてレビューする |
+| [memory-cleanup](https://github.com/uga-skills/memory-cleanup) | macOS のメモリが重いときに安全に解放する。inactive メモリの purge、メモリ上位プロセスの可視化、Chrome/Safari 等を除外した長時間起動プロセスの候補提示とユーザー確認後の kill を行う |
 
 各スキルのトークン使用量は、それぞれのリポジトリの README.md frontmatter に記載しています（SKILL.md 本文は日本語より少ないトークンで済む英語で記述し、`description` のみユーザーの発話（日本語）に合わせて日本語のままにしています）。
 
@@ -34,6 +35,7 @@ git clone git@github.com:uga-skills/review-markup.git ~/.claude/skills/review-ma
 git clone git@github.com:uga-skills/git-rebase.git ~/.claude/skills/git-rebase
 git clone git@github.com:uga-skills/git-merge.git ~/.claude/skills/git-merge
 git clone git@github.com:uga-skills/git-resolve-conflicts.git ~/.claude/skills/git-resolve-conflicts
+git clone git@github.com:uga-skills/memory-cleanup.git ~/.claude/skills/memory-cleanup
 ```
 
 ### シンボリックリンクパターン（複数ツールで共有）
@@ -46,11 +48,13 @@ git clone git@github.com:uga-skills/review-markup.git ~/.agent/skills/review-mar
 git clone git@github.com:uga-skills/git-rebase.git ~/.agent/skills/git-rebase
 git clone git@github.com:uga-skills/git-merge.git ~/.agent/skills/git-merge
 git clone git@github.com:uga-skills/git-resolve-conflicts.git ~/.agent/skills/git-resolve-conflicts
+git clone git@github.com:uga-skills/memory-cleanup.git ~/.agent/skills/memory-cleanup
 ln -s ~/.agent/skills/git-commit ~/.claude/skills/git-commit
 ln -s ~/.agent/skills/review-markup ~/.claude/skills/review-markup
 ln -s ~/.agent/skills/git-rebase ~/.claude/skills/git-rebase
 ln -s ~/.agent/skills/git-merge ~/.claude/skills/git-merge
 ln -s ~/.agent/skills/git-resolve-conflicts ~/.claude/skills/git-resolve-conflicts
+ln -s ~/.agent/skills/memory-cleanup ~/.claude/skills/memory-cleanup
 ```
 
 ## 使い方
@@ -63,6 +67,7 @@ ln -s ~/.agent/skills/git-resolve-conflicts ~/.claude/skills/git-resolve-conflic
 /git-rebase main
 /git-merge main
 /git-resolve-conflicts
+/memory-cleanup
 ```
 
 ## ツール
