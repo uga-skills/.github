@@ -1,6 +1,6 @@
 # uga-skills
 
-[Claude Code](https://claude.ai/code) 向けのスキル集です。
+個人的な[Claude Code](https://claude.ai/code) 向けのスキル置き場です。
 
 ## スキル一覧
 
